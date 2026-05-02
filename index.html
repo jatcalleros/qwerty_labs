@@ -1,21 +1,20 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>QWERTY Security Labs — Cybersecurity</title>
-<link href="favicon.svg" rel="icon" type="image/svg+xml"/>
-<link href="favicon.ico" rel="alternate icon"/>
-<meta content="QWERTY Security Labs — Cybersecurity &amp; Pentesting" property="og:title"/>
-<meta content="Offensive security and ISO 27001 consulting for businesses on the US–Mexico border. Bilingual, certified, battle-tested." property="og:description"/>
-<meta content="https://jatcalleros.github.io/qwerty_labs/og-preview.png" property="og:image"/>
-<meta content="1200" property="og:image:width"/>
-<meta content="630" property="og:image:height"/>
-<meta content="https://jatcalleros.github.io/qwerty_labs/" property="og:url"/>
-<meta content="Offensive security and ISO 27001 consulting for businesses on the US–Mexico border. Pentesting, vulnerability assessments, DSO as a Service." name="description"/>
-<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&amp;family=Rajdhani:wght@300;400;500;600;700&amp;family=Orbitron:wght@400;700;900&amp;display=swap" rel="stylesheet">
-<style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>QWERTY Security Labs — Cybersecurity</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="alternate icon" href="favicon.ico">
+  <meta property="og:title" content="QWERTY Security Labs — Cybersecurity &amp; Pentesting">
+  <meta property="og:description" content="Offensive security and ISO 27001 consulting for businesses on the US–Mexico border. Bilingual, certified, battle-tested.">
+  <meta property="og:image" content="https://jatcalleros.github.io/qwerty_labs/og-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://jatcalleros.github.io/qwerty_labs/">
+  <meta name="description" content="Offensive security and ISO 27001 consulting for businesses on the US–Mexico border. Pentesting, vulnerability assessments, DSO as a Service.">
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@300;400;500;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet"/>
+  <style>
     :root {
       --bg:        #040608;
       --bg2:       #080d12;
@@ -392,225 +391,416 @@
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
     /* Lang transition */
-    
+    [data-en], [data-es] { transition: opacity 0.2s; }
   </style>
-</link></head>
+</head>
 <body>
-<div class="cursor" id="cursor"></div>
-<div class="cursor-ring" id="cursorRing"></div>
-<!-- NAV -->
-<nav>
-<a class="nav-logo" href="#">QWERTY<span> </span>SECURITY LABS</a>
-<div class="nav-right">
-<ul class="nav-links">
-<li><a href="#services">Services</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#process">Process</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
 
-<button aria-label="Menu" class="hamburger" id="hamburger">
-<span></span><span></span><span></span>
-</button>
-</div>
-</nav>
-<!-- Mobile Menu -->
-<div class="mobile-menu" id="mobileMenu">
-<a href="#services" onclick="closeMenu()">Services</a>
-<a href="#about" onclick="closeMenu()">About</a>
-<a href="#process" onclick="closeMenu()">Process</a>
-<a href="#contact" onclick="closeMenu()">Contact</a>
-</div>
-<!-- HERO -->
-<section id="hero">
-<div class="grid-bg"></div>
-<div class="orb orb-1"></div>
-<div class="orb orb-2"></div>
-<p class="hero-tag">Cybersecurity · Pentesting · ISO 27001</p>
-<h1>
-<span>We <span class="accent">break</span> things<br/>so they don't<br/><span class="accent2">break you.</span></span>
-</h1>
-<p class="hero-sub">Elite offensive security and compliance consulting for businesses on the US–Mexico border and beyond.</p>
-<div class="hero-cta">
-<a class="btn btn-primary" href="#contact">Request Assessment</a>
-<a class="btn btn-outline" href="#services">Our Services</a>
-</div>
-<p class="typewriter"><span id="typeText"></span></p>
-</section>
-<!-- STATS -->
-<div class="stats-bar reveal">
-<div class="stat">
-<div class="stat-num">ISO</div>
-<div class="stat-label">27001 Certified</div>
-</div>
-<div class="stat">
-<div class="stat-num">CEH</div>
-<div class="stat-label">Ethical Hacker</div>
-</div>
-<div class="stat">
-<div class="stat-num">CCNA</div>
-<div class="stat-label">Network Certified</div>
-</div>
-<div class="stat">
-<div class="stat-num">MX+US</div>
-<div class="stat-label">Bilingual · Border</div>
-</div>
-</div>
-<!-- SERVICES -->
-<section id="services">
-<p class="section-tag reveal">What we do</p>
-<h2 class="reveal">Our <span class="accent">Services</span></h2>
-<p class="section-intro reveal">From vulnerability assessments to full ISO 27001 implementation — we cover the entire security lifecycle.</p>
-<div class="services-grid reveal">
-<div class="service-card">
-<span class="service-icon">🔍</span>
-<div class="service-title">Vulnerability Assessment</div>
-<p class="service-desc">Comprehensive scanning and manual testing of your infrastructure to identify and prioritize security weaknesses before attackers do.</p>
-<p class="service-price">From $15,000 MXN</p>
-</div>
-<div class="service-card">
-<span class="service-icon">💀</span>
-<div class="service-title">Penetration Testing</div>
-<p class="service-desc">Full scope offensive security testing — network, web application, and social engineering. Detailed report with remediation roadmap.</p>
-<p class="service-price">From $40,000 MXN</p>
-</div>
-<div class="service-card">
-<span class="service-icon">📋</span>
-<div class="service-title">ISO 27001 Consulting</div>
-<p class="service-desc">Gap analysis, implementation support, and audit preparation for ISO 27001 certification. We've been on both sides of the audit table.</p>
-<p class="service-price">From $20,000 MXN</p>
-</div>
-<div class="service-card">
-<span class="service-icon">🛡️</span>
-<div class="service-title">DSO as a Service</div>
-<p class="service-desc">Fractional Data Security Officer for SMEs that need enterprise-level security leadership without the full-time cost.</p>
-<p class="service-price">From $8,000 MXN/mo</p>
-</div>
-<div class="service-card">
-<span class="service-icon">🌐</span>
-<div class="service-title">Web App Security</div>
-<p class="service-desc">OWASP Top 10 testing, API security review, and authentication hardening for your web applications and portals.</p>
-<p class="service-price">From $25,000 MXN</p>
-</div>
-<div class="service-card">
-<span class="service-icon">🎓</span>
-<div class="service-title">Security Training</div>
-<p class="service-desc">Custom security awareness training for your team. Phishing simulations, social engineering defense, and compliance workshops.</p>
-<p class="service-price">From $10,000 MXN</p>
-</div>
-</div>
-</section>
-<!-- ABOUT -->
-<section id="about">
-<div class="about-content">
-<p class="section-tag reveal">Who we are</p>
-<h2 class="reveal">Border-native.<br/><span class="accent">Security-first.</span></h2>
-<p class="section-intro reveal">Based in Ciudad Juárez, Chihuahua — we operate at the intersection of Mexican and US business culture. Bilingual, certified, and battle-tested in real enterprise environments.</p>
-<div class="certs-list reveal">
-<span class="cert-badge">ISO 27001</span>
-<span class="cert-badge">Security+</span>
-<span class="cert-badge">CCNA</span>
-<span class="cert-badge">CEH</span>
-<span class="cert-badge">LPIC-1</span>
-<span class="cert-badge">HackTheBox</span>
-</div>
-</div>
-<div class="about-visual reveal">
-<div class="terminal">
-<div class="terminal-bar">
-<span class="dot dot-r"></span>
-<span class="dot dot-y"></span>
-<span class="dot dot-g"></span>
-<span class="terminal-title">qwerty@security-labs ~ recon.sh</span>
-</div>
-<div class="terminal-body">
-<span class="t-line"><span class="t-prompt">$ </span><span class="t-cmd">./recon.sh --target client_network</span></span>
-<span class="t-line t-out">[*] Initializing reconnaissance...</span>
-<span class="t-line t-out">[*] Scanning ports 1-65535...</span>
-<span class="t-line t-green">[+] Open: 22, 80, 443, 3306, 8080</span>
-<span class="t-line t-yellow">[!] Outdated service: Apache 2.2.3</span>
-<span class="t-line t-red">[!] CVE-2021-41773 detected</span>
-<span class="t-line t-out">[*] Running vuln assessment...</span>
-<span class="t-line t-green">[+] Report generated: report_final.pdf</span>
-<span class="t-line"><span class="t-prompt">$ </span><span class="t-cmd">_</span></span>
-</div>
-</div>
-</div>
-</section>
-<!-- PROCESS -->
-<section id="process">
-<p class="section-tag reveal">How it works</p>
-<h2 class="reveal">Our <span class="accent">Process</span></h2>
-<p class="section-intro reveal">A structured methodology from first contact to final report and remediation support.</p>
-<div class="process-steps reveal">
-<div class="step">
-<div class="step-num">01</div>
-<div class="step-title">Scoping</div>
-<p class="step-desc">Define targets, rules of engagement, and objectives. Signed NDA and service agreement.</p>
-</div>
-<div class="step">
-<div class="step-num">02</div>
-<div class="step-title">Reconnaissance</div>
-<p class="step-desc">OSINT, network mapping, and attack surface analysis before active testing begins.</p>
-</div>
-<div class="step">
-<div class="step-num">03</div>
-<div class="step-title">Exploitation</div>
-<p class="step-desc">Controlled, methodical testing of identified vulnerabilities with documented proof of concept.</p>
-</div>
-<div class="step">
-<div class="step-num">04</div>
-<div class="step-title">Reporting</div>
-<p class="step-desc">Executive summary + full technical report with risk ratings and remediation steps.</p>
-</div>
-<div class="step">
-<div class="step-num">05</div>
-<div class="step-title">Remediation</div>
-<p class="step-desc">Support your team in fixing findings. Optional retest to verify all issues are resolved.</p>
-</div>
-</div>
-</section>
-<!-- CONTACT -->
-<section id="contact">
-<div class="contact-orb"></div>
-<div class="contact-inner">
-<p class="section-tag reveal">Get in touch</p>
-<h2 class="reveal">Ready to test your<br/><span class="accent">defenses?</span></h2>
-<p class="section-intro reveal" style="margin: 1rem auto; text-align:center;">Whether you need a quick vulnerability scan or a full ISO 27001 implementation — let's talk.</p>
-<a class="contact-email reveal" href="mailto:contact@qwertylabs.mx">contact@qwertylabs.mx</a>
-<div class="contact-grid reveal">
-<div class="contact-item">
-<strong>Location</strong>
-<span>Ciudad Juárez, Chih.</span>
-</div>
-<div class="contact-item">
-<strong>Languages</strong>
-<span>Español · English</span>
-</div>
-<div class="contact-item">
-<strong>Response</strong>
-<span>&lt; 24 hours</span>
-</div>
-<div class="contact-item">
-<strong>Market</strong>
-<span>MX · US Border</span>
-</div>
-</div>
-<div class="reveal" style="margin-top:3rem;">
-<a class="btn btn-primary" href="mailto:contact@qwertylabs.mx">Send a Message</a>
-</div>
-</div>
-</section>
-<!-- FOOTER -->
-<footer>
-<div class="footer-logo">QWERTY<span> </span>SECURITY LABS</div>
-<p class="footer-copy">© 2025 QWERTY Security Labs · Ciudad Juárez, México · <a href="/qwerty_labs/es/" style="color:var(--accent);text-decoration:none;">ES</a></p>
-<ul class="footer-links">
-<li><a href="#services">Services</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-</footer>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
 
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="#">QWERTY<span> </span>SECURITY LABS</a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="#services"   data-en="Services"  data-es="Servicios">Services</a></li>
+        <li><a href="#about"      data-en="About"      data-es="Nosotros">About</a></li>
+        <li><a href="#process"    data-en="Process"    data-es="Proceso">Process</a></li>
+        <li><a href="#contact"    data-en="Contact"    data-es="Contacto">Contact</a></li>
+      </ul>
+      <div class="lang-toggle">
+        <button class="lang-btn active" id="btnEN" onclick="setLang('en')">EN</button>
+        <button class="lang-btn"        id="btnES" onclick="setLang('es')">ES</button>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#services" data-en="Services" data-es="Servicios" onclick="closeMenu()">Services</a>
+    <a href="#about"    data-en="About"     data-es="Nosotros"   onclick="closeMenu()">About</a>
+    <a href="#process"  data-en="Process"   data-es="Proceso"    onclick="closeMenu()">Process</a>
+    <a href="#contact"  data-en="Contact"   data-es="Contacto"  onclick="closeMenu()">Contact</a>
+  </div>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="grid-bg"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+
+    <p class="hero-tag" data-en="Cybersecurity · Pentesting · ISO 27001" data-es="Ciberseguridad · Pentesting · ISO 27001">Cybersecurity · Pentesting · ISO 27001</p>
+
+    <h1>
+      <span data-en='We <span class="accent">break</span> things<br/>so they don&apos;t<br/><span class="accent2">break you.</span>'
+            data-es='<span class="accent">Rompemos</span> sistemas<br/>para que nadie<br/><span class="accent2">los rompa contigo.</span>'>
+        We <span class="accent">break</span> things<br/>so they don't<br/><span class="accent2">break you.</span>
+      </span>
+    </h1>
+
+    <p class="hero-sub"
+       data-en="Elite offensive security and compliance consulting for businesses on the US–Mexico border and beyond."
+       data-es="Seguridad ofensiva de élite y consultoría de cumplimiento para empresas en la frontera México–EUA y más allá.">
+      Elite offensive security and compliance consulting for businesses on the US–Mexico border and beyond.
+    </p>
+
+    <div class="hero-cta">
+      <a href="#contact" class="btn btn-primary" data-en="Request Assessment" data-es="Solicitar Evaluación">Request Assessment</a>
+      <a href="#services" class="btn btn-outline" data-en="Our Services"      data-es="Nuestros Servicios">Our Services</a>
+    </div>
+
+    <p class="typewriter"><span id="typeText"></span></p>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats-bar reveal">
+    <div class="stat">
+      <div class="stat-num">ISO</div>
+      <div class="stat-label" data-en="27001 Certified" data-es="27001 Certificado">27001 Certified</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">CEH</div>
+      <div class="stat-label" data-en="Ethical Hacker" data-es="Hacker Ético">Ethical Hacker</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">CCNA</div>
+      <div class="stat-label" data-en="Network Certified" data-es="Redes Certificado">Network Certified</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">MX+US</div>
+      <div class="stat-label" data-en="Bilingual · Border" data-es="Bilingüe · Frontera">Bilingual · Border</div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <p class="section-tag reveal" data-en="What we do" data-es="Lo que hacemos">What we do</p>
+    <h2 class="reveal" data-en='Our <span class="accent">Services</span>' data-es='Nuestros <span class="accent">Servicios</span>'>Our <span class="accent">Services</span></h2>
+    <p class="section-intro reveal"
+       data-en="From vulnerability assessments to full ISO 27001 implementation — we cover the entire security lifecycle."
+       data-es="Desde evaluaciones de vulnerabilidades hasta implementación completa de ISO 27001 — cubrimos todo el ciclo de seguridad.">
+      From vulnerability assessments to full ISO 27001 implementation — we cover the entire security lifecycle.
+    </p>
+
+    <div class="services-grid reveal">
+      <div class="service-card">
+        <span class="service-icon">🔍</span>
+        <div class="service-title" data-en="Vulnerability Assessment" data-es="Evaluación de Vulnerabilidades">Vulnerability Assessment</div>
+        <p class="service-desc"
+           data-en="Comprehensive scanning and manual testing of your infrastructure to identify and prioritize security weaknesses before attackers do."
+           data-es="Escaneo exhaustivo y pruebas manuales de tu infraestructura para identificar y priorizar debilidades de seguridad antes que los atacantes.">
+          Comprehensive scanning and manual testing of your infrastructure to identify and prioritize security weaknesses before attackers do.
+        </p>
+        <p class="service-price" data-en="From $15,000 MXN" data-es="Desde $15,000 MXN">From $15,000 MXN</p>
+      </div>
+
+      <div class="service-card">
+        <span class="service-icon">💀</span>
+        <div class="service-title" data-en="Penetration Testing" data-es="Pruebas de Penetración">Penetration Testing</div>
+        <p class="service-desc"
+           data-en="Full scope offensive security testing — network, web application, and social engineering. Detailed report with remediation roadmap."
+           data-es="Pruebas ofensivas de alcance completo — red, aplicaciones web e ingeniería social. Reporte detallado con hoja de ruta de remediación.">
+          Full scope offensive security testing — network, web application, and social engineering. Detailed report with remediation roadmap.
+        </p>
+        <p class="service-price" data-en="From $40,000 MXN" data-es="Desde $40,000 MXN">From $40,000 MXN</p>
+      </div>
+
+      <div class="service-card">
+        <span class="service-icon">📋</span>
+        <div class="service-title" data-en="ISO 27001 Consulting" data-es="Consultoría ISO 27001">ISO 27001 Consulting</div>
+        <p class="service-desc"
+           data-en="Gap analysis, implementation support, and audit preparation for ISO 27001 certification. We've been on both sides of the audit table."
+           data-es="Análisis de brechas, soporte de implementación y preparación para auditoría ISO 27001. Hemos estado en ambos lados de la mesa.">
+          Gap analysis, implementation support, and audit preparation for ISO 27001 certification. We've been on both sides of the audit table.
+        </p>
+        <p class="service-price" data-en="From $20,000 MXN" data-es="Desde $20,000 MXN">From $20,000 MXN</p>
+      </div>
+
+      <div class="service-card">
+        <span class="service-icon">🛡️</span>
+        <div class="service-title" data-en="DSO as a Service" data-es="DSO como Servicio">DSO as a Service</div>
+        <p class="service-desc"
+           data-en="Fractional Data Security Officer for SMEs that need enterprise-level security leadership without the full-time cost."
+           data-es="Oficial de Seguridad de Datos fraccional para PyMEs que necesitan liderazgo de seguridad empresarial sin el costo de tiempo completo.">
+          Fractional Data Security Officer for SMEs that need enterprise-level security leadership without the full-time cost.
+        </p>
+        <p class="service-price" data-en="From $8,000 MXN/mo" data-es="Desde $8,000 MXN/mes">From $8,000 MXN/mo</p>
+      </div>
+
+      <div class="service-card">
+        <span class="service-icon">🌐</span>
+        <div class="service-title" data-en="Web App Security" data-es="Seguridad de Aplicaciones Web">Web App Security</div>
+        <p class="service-desc"
+           data-en="OWASP Top 10 testing, API security review, and authentication hardening for your web applications and portals."
+           data-es="Pruebas OWASP Top 10, revisión de seguridad de API y hardening de autenticación para tus aplicaciones web y portales.">
+          OWASP Top 10 testing, API security review, and authentication hardening for your web applications and portals.
+        </p>
+        <p class="service-price" data-en="From $25,000 MXN" data-es="Desde $25,000 MXN">From $25,000 MXN</p>
+      </div>
+
+      <div class="service-card">
+        <span class="service-icon">🎓</span>
+        <div class="service-title" data-en="Security Training" data-es="Capacitación en Seguridad">Security Training</div>
+        <p class="service-desc"
+           data-en="Custom security awareness training for your team. Phishing simulations, social engineering defense, and compliance workshops."
+           data-es="Capacitación personalizada en concientización de seguridad para tu equipo. Simulaciones de phishing, defensa contra ingeniería social y talleres de cumplimiento.">
+          Custom security awareness training for your team. Phishing simulations, social engineering defense, and compliance workshops.
+        </p>
+        <p class="service-price" data-en="From $10,000 MXN" data-es="Desde $10,000 MXN">From $10,000 MXN</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-content">
+      <p class="section-tag reveal" data-en="Who we are" data-es="Quiénes somos">Who we are</p>
+      <h2 class="reveal"
+          data-en='Border-native.<br/><span class="accent">Security-first.</span>'
+          data-es='Nacidos en la frontera.<br/><span class="accent">Seguridad primero.</span>'>
+        Border-native.<br/><span class="accent">Security-first.</span>
+      </h2>
+      <p class="section-intro reveal"
+         data-en="Based in Ciudad Juárez, Chihuahua — we operate at the intersection of Mexican and US business culture. Bilingual, certified, and battle-tested in real enterprise environments."
+         data-es="Con sede en Ciudad Juárez, Chihuahua — operamos en la intersección de la cultura empresarial mexicana y estadounidense. Bilingüe, certificado y probado en entornos empresariales reales.">
+        Based in Ciudad Juárez, Chihuahua — we operate at the intersection of Mexican and US business culture. Bilingual, certified, and battle-tested in real enterprise environments.
+      </p>
+      <div class="certs-list reveal">
+        <span class="cert-badge">ISO 27001</span>
+        <span class="cert-badge">Security+</span>
+        <span class="cert-badge">CCNA</span>
+        <span class="cert-badge">CEH</span>
+        <span class="cert-badge">LPIC-1</span>
+        <span class="cert-badge">HackTheBox</span>
+      </div>
+    </div>
+    <div class="about-visual reveal">
+      <div class="terminal">
+        <div class="terminal-bar">
+          <span class="dot dot-r"></span>
+          <span class="dot dot-y"></span>
+          <span class="dot dot-g"></span>
+          <span class="terminal-title">qwerty@security-labs ~ recon.sh</span>
+        </div>
+        <div class="terminal-body">
+          <span class="t-line"><span class="t-prompt">$ </span><span class="t-cmd">./recon.sh --target client_network</span></span>
+          <span class="t-line t-out">[*] Initializing reconnaissance...</span>
+          <span class="t-line t-out">[*] Scanning ports 1-65535...</span>
+          <span class="t-line t-green">[+] Open: 22, 80, 443, 3306, 8080</span>
+          <span class="t-line t-yellow">[!] Outdated service: Apache 2.2.3</span>
+          <span class="t-line t-red">[!] CVE-2021-41773 detected</span>
+          <span class="t-line t-out">[*] Running vuln assessment...</span>
+          <span class="t-line t-green">[+] Report generated: report_final.pdf</span>
+          <span class="t-line"><span class="t-prompt">$ </span><span class="t-cmd">_</span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process">
+    <p class="section-tag reveal" data-en="How it works" data-es="Cómo funciona">How it works</p>
+    <h2 class="reveal"
+        data-en='Our <span class="accent">Process</span>'
+        data-es='Nuestro <span class="accent">Proceso</span>'>
+      Our <span class="accent">Process</span>
+    </h2>
+    <p class="section-intro reveal"
+       data-en="A structured methodology from first contact to final report and remediation support."
+       data-es="Una metodología estructurada desde el primer contacto hasta el reporte final y soporte de remediación.">
+      A structured methodology from first contact to final report and remediation support.
+    </p>
+
+    <div class="process-steps reveal">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-title" data-en="Scoping"        data-es="Alcance">Scoping</div>
+        <p class="step-desc"
+           data-en="Define targets, rules of engagement, and objectives. Signed NDA and service agreement."
+           data-es="Definir objetivos, reglas de compromiso y alcance. NDA y contrato de servicios firmado.">
+          Define targets, rules of engagement, and objectives. Signed NDA and service agreement.
+        </p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-title" data-en="Reconnaissance" data-es="Reconocimiento">Reconnaissance</div>
+        <p class="step-desc"
+           data-en="OSINT, network mapping, and attack surface analysis before active testing begins."
+           data-es="OSINT, mapeo de red y análisis de superficie de ataque antes de iniciar pruebas activas.">
+          OSINT, network mapping, and attack surface analysis before active testing begins.
+        </p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-title" data-en="Exploitation"   data-es="Explotación">Exploitation</div>
+        <p class="step-desc"
+           data-en="Controlled, methodical testing of identified vulnerabilities with documented proof of concept."
+           data-es="Pruebas controladas y metódicas de vulnerabilidades identificadas con prueba de concepto documentada.">
+          Controlled, methodical testing of identified vulnerabilities with documented proof of concept.
+        </p>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div class="step-title" data-en="Reporting"      data-es="Reporte">Reporting</div>
+        <p class="step-desc"
+           data-en="Executive summary + full technical report with risk ratings and remediation steps."
+           data-es="Resumen ejecutivo + reporte técnico completo con clasificación de riesgos y pasos de remediación.">
+          Executive summary + full technical report with risk ratings and remediation steps.
+        </p>
+      </div>
+      <div class="step">
+        <div class="step-num">05</div>
+        <div class="step-title" data-en="Remediation"    data-es="Remediación">Remediation</div>
+        <p class="step-desc"
+           data-en="Support your team in fixing findings. Optional retest to verify all issues are resolved."
+           data-es="Apoyamos a tu equipo en la corrección de hallazgos. Reprueba opcional para verificar que todo esté resuelto.">
+          Support your team in fixing findings. Optional retest to verify all issues are resolved.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-orb"></div>
+    <div class="contact-inner">
+      <p class="section-tag reveal" data-en="Get in touch" data-es="Contáctanos">Get in touch</p>
+      <h2 class="reveal"
+          data-en='Ready to test your<br/><span class="accent">defenses?</span>'
+          data-es='¿Listo para probar tus<br/><span class="accent">defensas?</span>'>
+        Ready to test your<br/><span class="accent">defenses?</span>
+      </h2>
+      <p class="section-intro reveal" style="margin: 1rem auto; text-align:center;"
+         data-en="Whether you need a quick vulnerability scan or a full ISO 27001 implementation — let's talk."
+         data-es="Ya sea que necesites un escaneo rápido o una implementación completa de ISO 27001 — hablemos.">
+        Whether you need a quick vulnerability scan or a full ISO 27001 implementation — let's talk.
+      </p>
+
+      <a href="mailto:contact@qwertylabs.mx" class="contact-email reveal">contact@qwertylabs.mx</a>
+
+      <div class="contact-grid reveal">
+        <div class="contact-item">
+          <strong data-en="Location" data-es="Ubicación">Location</strong>
+          <span data-en="Ciudad Juárez, Chih." data-es="Ciudad Juárez, Chih.">Ciudad Juárez, Chih.</span>
+        </div>
+        <div class="contact-item">
+          <strong data-en="Languages" data-es="Idiomas">Languages</strong>
+          <span data-en="Español · English" data-es="Español · English">Español · English</span>
+        </div>
+        <div class="contact-item">
+          <strong data-en="Response" data-es="Respuesta">Response</strong>
+          <span data-en="&lt; 24 hours" data-es="&lt; 24 horas">&lt; 24 hours</span>
+        </div>
+        <div class="contact-item">
+          <strong data-en="Market" data-es="Mercado">Market</strong>
+          <span data-en="MX · US Border" data-es="MX · Frontera EUA">MX · US Border</span>
+        </div>
+      </div>
+
+      <div style="margin-top:3rem;" class="reveal">
+        <a href="mailto:contact@qwertylabs.mx" class="btn btn-primary"
+           data-en="Send a Message" data-es="Enviar Mensaje">Send a Message</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">QWERTY<span> </span>SECURITY LABS</div>
+    <p class="footer-copy" data-en="© 2025 QWERTY Security Labs · Ciudad Juárez, México" data-es="© 2025 QWERTY Security Labs · Ciudad Juárez, México">© 2025 QWERTY Security Labs · Ciudad Juárez, México</p>
+    <ul class="footer-links">
+      <li><a href="#services" data-en="Services" data-es="Servicios">Services</a></li>
+      <li><a href="#about"    data-en="About"    data-es="Nosotros">About</a></li>
+      <li><a href="#contact"  data-en="Contact"  data-es="Contacto">Contact</a></li>
+    </ul>
+  </footer>
+
+  <script>
+    // ── Cursor (desktop only — skip if nav doesn't exist / no hover)
+    if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      const cursor = document.getElementById('cursor');
+      const ring   = document.getElementById('cursorRing');
+      if (cursor && ring) {
+        document.addEventListener('mousemove', e => {
+          cursor.style.left = e.clientX + 'px';
+          cursor.style.top  = e.clientY + 'px';
+          setTimeout(() => { ring.style.left = e.clientX + 'px'; ring.style.top = e.clientY + 'px'; }, 80);
+        });
+        document.querySelectorAll('a, button').forEach(el => {
+          el.addEventListener('mouseenter', () => { cursor.style.transform = 'translate(-50%,-50%) scale(2)'; ring.style.width = '56px'; ring.style.height = '56px'; });
+          el.addEventListener('mouseleave', () => { cursor.style.transform = 'translate(-50%,-50%) scale(1)'; ring.style.width = '36px'; ring.style.height = '36px'; });
+        });
+      }
+    }
+
+    // ── Typewriter
+    const phrases = [
+      'nmap -sV -O target.network',
+      'sqlmap --dbs --level=5',
+      'msfconsole -q -x "use exploit/..."',
+      'hashcat -a 0 -m 1000 hash.txt',
+      'python3 exploit.py --rhost target',
+    ];
+    let pi = 0, ci = 0, deleting = false;
+    const el = document.getElementById('typeText');
+    function type() {
+      const phrase = phrases[pi];
+      if (!deleting) {
+        el.textContent = phrase.slice(0, ++ci);
+        if (ci === phrase.length) { deleting = true; setTimeout(type, 1800); return; }
+      } else {
+        el.textContent = phrase.slice(0, --ci);
+        if (ci === 0) { deleting = false; pi = (pi + 1) % phrases.length; }
+      }
+      setTimeout(type, deleting ? 40 : 70);
+    }
+    setTimeout(type, 1200);
+
+    // ── Scroll reveal
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // ── Hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    function closeMenu() { hamburger.classList.remove('active'); mobileMenu.classList.remove('open'); }
+    if (hamburger && mobileMenu) {
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        mobileMenu.classList.toggle('open');
+      });
+      mobileMenu.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', closeMenu);
+      });
+    }
+
+    // ── Language switcher
+    let currentLang = 'en';
+
+    function setLang(lang) {
+      currentLang = lang;
+      document.getElementById('btnEN').classList.toggle('active', lang === 'en');
+      document.getElementById('btnES').classList.toggle('active', lang === 'es');
+      document.documentElement.lang = lang;
+
+      document.querySelectorAll('[data-en]').forEach(el => {
+        const val = el.getAttribute('data-' + lang);
+        if (val !== null) {
+          // Use innerHTML for elements that contain HTML tags
+          if (val.includes('<') || val.includes('&')) {
+            el.innerHTML = val;
+          } else {
+            el.textContent = val;
+          }
+        }
+      });
+    }
+  </script>
 </body>
 </html>
