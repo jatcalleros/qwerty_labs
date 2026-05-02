@@ -26,26 +26,29 @@
       background: var(--bg);
       color: var(--text);
       font-family: 'Rajdhani', sans-serif;
-      font-size: 17px;
+      font-size: 18px;
       line-height: 1.7;
       overflow-x: hidden;
       cursor: none;
     }
 
-    .cursor {
-      position: fixed; width: 12px; height: 12px;
-      background: var(--accent); border-radius: 50%;
-      pointer-events: none; z-index: 9999;
-      transform: translate(-50%, -50%);
-      transition: transform 0.08s, background 0.2s;
-      box-shadow: var(--glow);
-    }
-    .cursor-ring {
-      position: fixed; width: 36px; height: 36px;
-      border: 1px solid rgba(0,255,224,0.5); border-radius: 50%;
-      pointer-events: none; z-index: 9998;
-      transform: translate(-50%, -50%);
-      transition: transform 0.18s ease, width 0.2s, height 0.2s;
+    .cursor, .cursor-ring { display: none; }
+    @media (hover: hover) and (pointer: fine) {
+      .cursor {
+        display: block; position: fixed; width: 12px; height: 12px;
+        background: var(--accent); border-radius: 50%;
+        pointer-events: none; z-index: 9999;
+        transform: translate(-50%, -50%);
+        transition: transform 0.08s, background 0.2s;
+        box-shadow: var(--glow);
+      }
+      .cursor-ring {
+        display: block; position: fixed; width: 36px; height: 36px;
+        border: 1px solid rgba(0,255,224,0.5); border-radius: 50%;
+        pointer-events: none; z-index: 9998;
+        transform: translate(-50%, -50%);
+        transition: transform 0.18s ease, width 0.2s, height 0.2s;
+      }
     }
 
     body::before {
@@ -140,7 +143,7 @@
     @keyframes pulse { 0%,100% { transform: scale(1); opacity: 0.6; } 50% { transform: scale(1.2); opacity: 1; } }
 
     .hero-tag {
-      font-family: 'Share Tech Mono', monospace; font-size: 0.75rem;
+      font-family: 'Share Tech Mono', monospace; font-size: 0.85rem;
       color: var(--accent); letter-spacing: 0.2em; text-transform: uppercase;
       margin-bottom: 1.5rem; opacity: 0; animation: fadeUp 0.8s 0.2s forwards;
     }
@@ -154,7 +157,7 @@
     h1 .accent { color: var(--accent); text-shadow: var(--glow); }
     h1 .accent2 { color: var(--accent2); text-shadow: var(--glow2); }
     .hero-sub {
-      font-size: 1.15rem; color: var(--muted); max-width: 560px;
+      font-size: 1.25rem; color: var(--muted); max-width: 560px;
       margin-top: 1.5rem; font-weight: 400;
       opacity: 0; animation: fadeUp 0.8s 0.6s forwards;
     }
@@ -163,9 +166,9 @@
       opacity: 0; animation: fadeUp 0.8s 0.8s forwards;
     }
     .btn {
-      font-family: 'Share Tech Mono', monospace; font-size: 0.82rem;
+      font-family: 'Share Tech Mono', monospace; font-size: 0.9rem;
       letter-spacing: 0.12em; text-transform: uppercase;
-      padding: 0.85rem 2rem; border: none; cursor: none;
+      padding: 0.9rem 2.2rem; border: none; cursor: none;
       text-decoration: none; transition: all 0.2s; position: relative; overflow: hidden;
     }
     .btn-primary {
@@ -179,7 +182,7 @@
     }
     .btn-outline:hover { background: rgba(0,255,224,0.08); box-shadow: var(--glow); transform: translateY(-2px); }
     .typewriter {
-      font-family: 'Share Tech Mono', monospace; font-size: 0.85rem;
+      font-family: 'Share Tech Mono', monospace; font-size: 0.95rem;
       color: var(--accent); margin-top: 3rem;
       opacity: 0; animation: fadeUp 0.8s 1s forwards;
     }
@@ -204,7 +207,7 @@
     .section-tag::before { content: '// '; }
     h2 { font-family: 'Orbitron', monospace; font-size: clamp(1.6rem, 3.5vw, 2.6rem); font-weight: 700; color: #fff; margin-bottom: 1rem; }
     h2 .accent { color: var(--accent); }
-    .section-intro { color: var(--muted); max-width: 560px; margin-bottom: 3.5rem; }
+    .section-intro { color: var(--muted); max-width: 560px; margin-bottom: 3.5rem; font-size: 1.15rem; }
 
     /* ── SERVICES ── */
     #services { background: var(--bg2); }
@@ -219,10 +222,10 @@
     }
     .service-card:hover { background: var(--surface); }
     .service-card:hover::before { height: 100%; }
-    .service-icon { font-size: 2rem; margin-bottom: 1.25rem; display: block; }
-    .service-title { font-family: 'Orbitron', monospace; font-size: 0.95rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem; letter-spacing: 0.05em; }
-    .service-desc { font-size: 0.95rem; color: var(--muted); line-height: 1.6; }
-    .service-price { font-family: 'Share Tech Mono', monospace; font-size: 0.78rem; color: var(--accent); margin-top: 1.25rem; letter-spacing: 0.1em; }
+    .service-icon { font-size: 2.2rem; margin-bottom: 1.25rem; display: block; }
+    .service-title { font-family: 'Orbitron', monospace; font-size: 1.05rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem; letter-spacing: 0.05em; }
+    .service-desc { font-size: 1.05rem; color: var(--muted); line-height: 1.7; }
+    .service-price { font-family: 'Share Tech Mono', monospace; font-size: 0.85rem; color: var(--accent); margin-top: 1.25rem; letter-spacing: 0.1em; }
 
     /* ── ABOUT ── */
     #about { display: grid; grid-template-columns: 1fr 1fr; gap: 5vw; align-items: center; }
@@ -268,8 +271,8 @@
       clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
       position: relative; z-index: 1;
     }
-    .step-title { font-family: 'Orbitron', monospace; font-size: 0.82rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem; letter-spacing: 0.05em; }
-    .step-desc { font-size: 0.92rem; color: var(--muted); }
+    .step-title { font-family: 'Orbitron', monospace; font-size: 0.95rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem; letter-spacing: 0.05em; }
+    .step-desc { font-size: 1.05rem; color: var(--muted); }
 
     /* ── CONTACT ── */
     #contact { text-align: center; position: relative; overflow: hidden; }
@@ -280,7 +283,7 @@
     }
     .contact-inner { position: relative; z-index: 1; }
     .contact-email {
-      font-family: 'Share Tech Mono', monospace; font-size: clamp(1rem, 2.5vw, 1.4rem);
+      font-family: 'Share Tech Mono', monospace; font-size: clamp(1.1rem, 3vw, 1.5rem);
       color: var(--accent); text-decoration: none; letter-spacing: 0.1em;
       display: inline-block; margin: 2rem 0; transition: text-shadow 0.2s;
     }
@@ -303,11 +306,45 @@
     .footer-links a:hover { color: var(--accent); }
 
     @media (max-width: 768px) {
-      #about { grid-template-columns: 1fr; }
+      #about { grid-template-columns: 1fr; gap: 3rem; }
       .process-steps::before { display: none; }
       .nav-links { display: none; }
-      .hero-cta { flex-direction: column; }
-      footer { flex-direction: column; text-align: center; }
+      .hero-cta { flex-direction: column; align-items: stretch; }
+      .hero-cta .btn { text-align: center; }
+      section { padding: 4rem 5vw; }
+      #hero { padding: 8rem 5vw 4rem; }
+      .stats-bar { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; padding: 1.5rem 5vw; }
+      .stat-num { font-size: 1.6rem; }
+      .services-grid { grid-template-columns: 1fr; }
+      .service-card { padding: 2rem 1.5rem; }
+      .process-steps { grid-template-columns: 1fr; gap: 0; }
+      .step { padding: 1.5rem 0; border-bottom: 1px solid var(--border); }
+      .step:last-child { border-bottom: none; }
+      .contact-grid { flex-direction: column; gap: 1.5rem; align-items: center; }
+      .certs-list { justify-content: center; }
+      footer { flex-direction: column; text-align: center; gap: 1.5rem; }
+      .typewriter { font-size: 0.85rem; word-break: break-all; }
+    }
+
+    @media (max-width: 480px) {
+      body { font-size: 16px; }
+      h1 { font-size: clamp(2rem, 10vw, 2.8rem); }
+      h2 { font-size: clamp(1.4rem, 6vw, 1.6rem); }
+      .hero-sub { font-size: 1.1rem; }
+      .hero-tag { font-size: 0.75rem; }
+      .stats-bar { grid-template-columns: repeat(2, 1fr); gap: 1rem; padding: 1.25rem 4vw; }
+      .stat-num { font-size: 1.4rem; }
+      .nav-logo { font-size: 1rem; }
+      .service-title { font-size: 0.9rem; }
+      .service-icon { font-size: 1.6rem; }
+      .step-title { font-size: 0.85rem; }
+      .contact-email { font-size: 1rem; }
+      .contact-item { font-size: 0.75rem; }
+      .btn { font-size: 0.78rem; padding: 0.75rem 1.5rem; }
+      .terminal { font-size: 0.72rem; }
+      .terminal-body { padding: 1rem; }
+      #hero { padding: 7rem 5vw 3rem; }
+      section { padding: 3rem 5vw; }
     }
 
     .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
@@ -632,18 +669,22 @@
   </footer>
 
   <script>
-    // ── Cursor
-    const cursor = document.getElementById('cursor');
-    const ring   = document.getElementById('cursorRing');
-    document.addEventListener('mousemove', e => {
-      cursor.style.left = e.clientX + 'px';
-      cursor.style.top  = e.clientY + 'px';
-      setTimeout(() => { ring.style.left = e.clientX + 'px'; ring.style.top = e.clientY + 'px'; }, 80);
-    });
-    document.querySelectorAll('a, button').forEach(el => {
-      el.addEventListener('mouseenter', () => { cursor.style.transform = 'translate(-50%,-50%) scale(2)'; ring.style.width = '56px'; ring.style.height = '56px'; });
-      el.addEventListener('mouseleave', () => { cursor.style.transform = 'translate(-50%,-50%) scale(1)'; ring.style.width = '36px'; ring.style.height = '36px'; });
-    });
+    // ── Cursor (desktop only — skip if nav doesn't exist / no hover)
+    if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      const cursor = document.getElementById('cursor');
+      const ring   = document.getElementById('cursorRing');
+      if (cursor && ring) {
+        document.addEventListener('mousemove', e => {
+          cursor.style.left = e.clientX + 'px';
+          cursor.style.top  = e.clientY + 'px';
+          setTimeout(() => { ring.style.left = e.clientX + 'px'; ring.style.top = e.clientY + 'px'; }, 80);
+        });
+        document.querySelectorAll('a, button').forEach(el => {
+          el.addEventListener('mouseenter', () => { cursor.style.transform = 'translate(-50%,-50%) scale(2)'; ring.style.width = '56px'; ring.style.height = '56px'; });
+          el.addEventListener('mouseleave', () => { cursor.style.transform = 'translate(-50%,-50%) scale(1)'; ring.style.width = '36px'; ring.style.height = '36px'; });
+        });
+      }
+    }
 
     // ── Typewriter
     const phrases = [
