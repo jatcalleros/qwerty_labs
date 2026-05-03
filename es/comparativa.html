@@ -28,7 +28,7 @@
       background: var(--bg);
       color: var(--text);
       font-family: 'Rajdhani', sans-serif;
-      font-size: 24px;
+      font-size: 27px;
       line-height: 1.7;
       overflow-x: hidden;
     }
@@ -219,6 +219,7 @@
     .tooltip-overlay.visible { display: block; }
 
     @media (max-width: 768px) {
+      .tooltip-box { max-width: 90vw; font-size: 0.78rem; top: 10px !important; left: 5vw !important; }
       .comparison-table { font-size: 0.82rem; }
       .comparison-table th, .comparison-table td { padding: 0.75rem 0.6rem; }
       .pro-con-grid { grid-template-columns: 1fr; }
@@ -238,6 +239,80 @@
     <p style="color:var(--muted);font-size:1.1rem;margin-bottom:2rem;">Porque no todos los que dicen "seguridad" hacen lo mismo.</p>
     <p class="subtitle" style="font-size:1.05rem;">
       Comparación directa con las alternativas. Sin humo, sin promesas vacías — solo información real para que decidas con claridad.
+    </p>
+
+    <!-- TIER TABLE -->
+    <h2>Nuestros <span class="accent">Servicios</span></h2>
+    <p style="color:var(--muted);margin-bottom:0.5rem;">
+      Tres niveles. Un objetivo: que tengas la seguridad que realmente necesitas, sin pagar de más.
+    </p>
+
+    <table class="comparison-table">
+      <tr>
+        <th></th>
+        <th class="highlight">Entry</th>
+        <th class="highlight">Core</th>
+        <th class="highlight">Premium</th>
+      </tr>
+      <tr>
+        <td>Servicio</td>
+        <td class="highlight">
+          Evaluación de Vulnerabilidades
+          <span class="tooltip-trigger" onclick="toggleTooltip(event, 'vuln')" style="cursor:pointer;font-size:0.7rem;color:var(--accent);"> ⓘ</span>
+          <div id="tooltip-vuln" class="tooltip-box">
+            <strong>¿Qué es?</strong><br/>
+            Escaneo automatizado + validación manual superficial. Identifica puertos abiertos, servicios desactualizados, configuraciones débiles y CVEs conocidos en tu infraestructura.<br/><br/>
+            <strong>¿Cumple con ISO 27001?</strong><br/>
+            Sí, un vulnerability assessment <strong>sí cumple</strong> con el requisito de la cláusula A.8.8 (Gestión de vulnerabilidades técnicas) de ISO 27001:2022. Muchas empresas lo contratan como evidencia de control preventivo sin necesidad de un pentest completo.<br/><br/>
+            <strong>¿Cuándo elegirlo?</strong><br/>
+            Cuando es tu primera vez, tienes presupuesto limitado o necesitas cumplimiento rápido. Es el punto de partida correcto.
+          </div>
+        </td>
+        <td class="highlight">
+          Prueba de Penetración
+          <span class="tooltip-trigger" onclick="toggleTooltip(event, 'pentest')" style="cursor:pointer;font-size:0.7rem;color:var(--accent);"> ⓘ</span>
+          <div id="tooltip-pentest" class="tooltip-box">
+            <strong>¿Qué es?</strong><br/>
+            Prueba ofensiva completa con explotación manual de vulnerabilidades. Incluye análisis de lógica de negocio, escalamiento de privilegios, movimientos laterales y pruebas de ingeniería social.<br/><br/>
+            <strong>¿Diferencia con el Entry?</strong><br/>
+            El Entry encuentra QUÉ está mal. El Core demuestra QUÉ TAN MALO es — porque explota la vulnerabilidad para mostrar el impacto real.<br/><br/>
+            <strong>¿Cuándo elegirlo?</strong><br/>
+            Cuando ya tienes un assessment y quieres validar si realmente puedes ser vulnerado. O cuando tu cliente o aseguradora lo exige.
+          </div>
+        </td>
+        <td class="highlight">
+          Pentest + ISO 27001
+          <span class="tooltip-trigger" onclick="toggleTooltip(event, 'iso')" style="cursor:pointer;font-size:0.7rem;color:var(--accent);"> ⓘ</span>
+          <div id="tooltip-iso" class="tooltip-box">
+            <strong>¿Qué incluye?</strong><br/>
+            Pentest completo + implementación ISO 27001:2022 (gap analysis, Declaración de Aplicabilidad, políticas, procedimientos, matriz de riesgos, apoyo en auditoría).<br/><br/>
+            <strong>¿Por qué combinarlos?</strong><br/>
+            Porque el pentest alimenta el análisis de riesgos de la ISO, y la ISO te da el marco para corregir lo que encontró el pentest. Juntos son más fuertes.<br/><br/>
+            <strong>¿Cuándo elegirlo?</strong><br/>
+            Cuando necesitas certificación o tu cliente te exige ambos. Es el paquete completo.
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>Precio</td>
+        <td class="highlight">Desde <strong>$15,000 MXN</strong></td>
+        <td class="highlight">Desde <strong>$40,000 MXN</strong></td>
+        <td class="highlight">Desde <strong>$120,000 MXN</strong></td>
+      </tr>
+      <tr>
+        <td>Ideal para</td>
+        <td class="highlight">Primera vez, PyMEs con presupuesto ajustado</td>
+        <td class="highlight">Empresas listas para una evaluación completa</td>
+        <td class="highlight">Empresas que necesitan cumplimiento + seguridad real</td>
+      </tr>
+      <tr>
+        <td>Más info</td>
+        <td class="highlight"><a href="/qwerty_labs/es/servicios.html" style="color:var(--accent);text-decoration:none;font-family:'Share Tech Mono',monospace;font-size:0.78rem;">→ Ver detalle</a></td>
+        <td class="highlight"><a href="/qwerty_labs/es/servicios.html" style="color:var(--accent);text-decoration:none;font-family:'Share Tech Mono',monospace;font-size:0.78rem;">→ Ver detalle</a></td>
+        <td class="highlight"><a href="/qwerty_labs/es/servicios.html" style="color:var(--accent);text-decoration:none;font-family:'Share Tech Mono',monospace;font-size:0.78rem;">→ Ver detalle</a></td>
+      </tr>
+    </table>
+
     </p>
 
     <!-- TABLA PRINCIPAL -->
@@ -377,107 +452,6 @@
       </tr>
     </table>
 
-    <!-- TIER TABLE -->
-    <h2>Nuestros <span class="accent">Servicios</span></h2>
-    <p style="color:var(--muted);margin-bottom:0.5rem;">
-      Tres niveles. Un objetivo: que tengas la seguridad que realmente necesitas, sin pagar de más.
-    </p>
-
-    <table class="comparison-table">
-      <tr>
-        <th></th>
-        <th class="highlight">Entry</th>
-        <th class="highlight">Core</th>
-        <th class="highlight">Premium</th>
-      </tr>
-      <tr>
-        <td>Servicio</td>
-        <td class="highlight">
-          Evaluación de Vulnerabilidades
-          <span class="tooltip-trigger" onclick="toggleTooltip(event, 'vuln')" style="cursor:pointer;font-size:0.7rem;color:var(--accent);"> ⓘ</span>
-          <div id="tooltip-vuln" class="tooltip-box">
-            <strong>¿Qué es?</strong><br/>
-            Escaneo automatizado + validación manual superficial. Identifica puertos abiertos, servicios desactualizados, configuraciones débiles y CVEs conocidos en tu infraestructura.<br/><br/>
-            <strong>¿Cumple con ISO 27001?</strong><br/>
-            Sí, un vulnerability assessment <strong>sí cumple</strong> con el requisito de la cláusula A.8.8 (Gestión de vulnerabilidades técnicas) de ISO 27001:2022. Muchas empresas lo contratan como evidencia de control preventivo sin necesidad de un pentest completo.<br/><br/>
-            <strong>¿Cuándo elegirlo?</strong><br/>
-            Cuando es tu primera vez, tienes presupuesto limitado o necesitas cumplimiento rápido. Es el punto de partida correcto.
-          </div>
-        </td>
-        <td class="highlight">
-          Prueba de Penetración
-          <span class="tooltip-trigger" onclick="toggleTooltip(event, 'pentest')" style="cursor:pointer;font-size:0.7rem;color:var(--accent);"> ⓘ</span>
-          <div id="tooltip-pentest" class="tooltip-box">
-            <strong>¿Qué es?</strong><br/>
-            Prueba ofensiva completa con explotación manual de vulnerabilidades. Incluye análisis de lógica de negocio, escalamiento de privilegios, movimientos laterales y pruebas de ingeniería social.<br/><br/>
-            <strong>¿Diferencia con el Entry?</strong><br/>
-            El Entry encuentra QUÉ está mal. El Core demuestra QUÉ TAN MALO es — porque explota la vulnerabilidad para mostrar el impacto real.<br/><br/>
-            <strong>¿Cuándo elegirlo?</strong><br/>
-            Cuando ya tienes un assessment y quieres validar si realmente puedes ser vulnerado. O cuando tu cliente o aseguradora lo exige.
-          </div>
-        </td>
-        <td class="highlight">
-          Pentest + ISO 27001
-          <span class="tooltip-trigger" onclick="toggleTooltip(event, 'iso')" style="cursor:pointer;font-size:0.7rem;color:var(--accent);"> ⓘ</span>
-          <div id="tooltip-iso" class="tooltip-box">
-            <strong>¿Qué incluye?</strong><br/>
-            Pentest completo + implementación ISO 27001:2022 (gap analysis, Declaración de Aplicabilidad, políticas, procedimientos, matriz de riesgos, apoyo en auditoría).<br/><br/>
-            <strong>¿Por qué combinarlos?</strong><br/>
-            Porque el pentest alimenta el análisis de riesgos de la ISO, y la ISO te da el marco para corregir lo que encontró el pentest. Juntos son más fuertes.<br/><br/>
-            <strong>¿Cuándo elegirlo?</strong><br/>
-            Cuando necesitas certificación o tu cliente te exige ambos. Es el paquete completo.
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>Precio</td>
-        <td class="highlight">Desde <strong>$15,000 MXN</strong></td>
-        <td class="highlight">Desde <strong>$40,000 MXN</strong></td>
-        <td class="highlight">Desde <strong>$120,000 MXN</strong></td>
-      </tr>
-      <tr>
-        <td>Ideal para</td>
-        <td class="highlight">Primera vez, PyMEs con presupuesto ajustado</td>
-        <td class="highlight">Empresas listas para una evaluación completa</td>
-        <td class="highlight">Empresas que necesitan cumplimiento + seguridad real</td>
-      </tr>
-      <tr>
-        <td>Más info</td>
-        <td class="highlight"><a href="/qwerty_labs/es/servicios.html" style="color:var(--accent);text-decoration:none;font-family:'Share Tech Mono',monospace;font-size:0.78rem;">→ Ver detalle</a></td>
-        <td class="highlight"><a href="/qwerty_labs/es/servicios.html" style="color:var(--accent);text-decoration:none;font-family:'Share Tech Mono',monospace;font-size:0.78rem;">→ Ver detalle</a></td>
-        <td class="highlight"><a href="/qwerty_labs/es/servicios.html" style="color:var(--accent);text-decoration:none;font-family:'Share Tech Mono',monospace;font-size:0.78rem;">→ Ver detalle</a></td>
-      </tr>
-    </table>
-
-    <!-- PROS Y CONTRAS -->
-    <h2>Lo Bueno y lo <span class="accent2">Menos Bueno</span></h2>
-
-    <div class="pro-con-grid">
-      <div class="pro">
-        <h3>Por qué contratarnos</h3>
-        <ul>
-          <li>Especialistas puros — no vendemos servidores ni networks</li>
-          <li>Precios justos para PyMEs mexicanas</li>
-          <li>Te atiende el dueño directamente</li>
-          <li>ISO 27001 desde la trinchera real</li>
-          <li>Bilingüe — ideal para maquiladoras con matriz en EU</li>
-          <li>Reportes claros con remediación incluida</li>
-          <li>Nos importa tu negocio, no sólo el deliverable</li>
-        </ul>
-      </div>
-      <div class="con">
-        <h3>Nuestras limitaciones honestas</h3>
-        <ul>
-          <li>Equipo pequeño — no podemos atender 10 clientes al mismo tiempo</li>
-          <li>Sin SOC 24/7 (por ahora)</li>
-          <li>No tenemos oficina en CDMX o MTY</li>
-          <li>No hacemos desarrollo de software ni cloud migration</li>
-          <li>Algunos clientes grandes requieren vendor registration que aún no tenemos</li>
-          <li>Somos una firma joven — sin vicios corporativos, sin capas de burocracia, sin overhead que te cobramos</li>
-        </ul>
-      </div>
-    </div>
-
     <!-- CALLOUT -->
     <div class="callout">
       <div class="callout-title">🛡️ Datos clave para tu negocio</div>
@@ -530,6 +504,9 @@
         var rect = event.target.getBoundingClientRect();
         var bx = rect.left;
         var by = rect.bottom + 8;
+        var tooltipH = 400;
+        if (by + tooltipH > window.innerHeight) by = rect.top - tooltipH - 8;
+        if (by < 10) by = 10;
         if (bx + 360 > window.innerWidth) bx = window.innerWidth - 380;
         if (bx < 10) bx = 10;
         box.style.left = bx + 'px';
