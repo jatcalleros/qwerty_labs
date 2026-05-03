@@ -193,12 +193,39 @@
     }
     .btn:hover { background: #fff; box-shadow: var(--glow); transform: translateY(-2px); }
 
+    /* ── Tooltip ── */
+    .tooltip-box {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      max-width: 360px;
+      width: 90vw;
+      background: #060e14;
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      padding: 1.25rem;
+      font-size: 0.85rem;
+      line-height: 1.6;
+      color: var(--text);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+      pointer-events: auto;
+    }
+    .tooltip-box.visible { display: block; }
+    .tooltip-box strong { color: var(--accent); }
+    .tooltip-overlay {
+      position: fixed; inset: 0; z-index: 9998;
+      display: none;
+    }
+    .tooltip-overlay.visible { display: block; }
+
     @media (max-width: 768px) {
       .comparison-table { font-size: 0.82rem; }
       .comparison-table th, .comparison-table td { padding: 0.75rem 0.6rem; }
       .pro-con-grid { grid-template-columns: 1fr; }
+      .tooltip-box { max-width: 85vw; font-size: 0.8rem; }
     }
   </style>
+  <div class="tooltip-overlay" id="tooltipOverlay" onclick="closeTooltip()"></div>
 </head>
 <body>
 
@@ -350,6 +377,78 @@
       </tr>
     </table>
 
+    <!-- TIER TABLE -->
+    <h2>Nuestros <span class="accent">Servicios</span></h2>
+    <p style="color:var(--muted);margin-bottom:0.5rem;">
+      Tres niveles. Un objetivo: que tengas la seguridad que realmente necesitas, sin pagar de más.
+    </p>
+
+    <table class="comparison-table">
+      <tr>
+        <th></th>
+        <th class="highlight">Entry</th>
+        <th class="highlight">Core</th>
+        <th class="highlight">Premium</th>
+      </tr>
+      <tr>
+        <td>Servicio</td>
+        <td class="highlight">
+          Evaluación de Vulnerabilidades
+          <span class="tooltip-trigger" onclick="toggleTooltip(event, 'vuln')" style="cursor:pointer;font-size:0.7rem;color:var(--accent);"> ⓘ</span>
+          <div id="tooltip-vuln" class="tooltip-box">
+            <strong>¿Qué es?</strong><br/>
+            Escaneo automatizado + validación manual superficial. Identifica puertos abiertos, servicios desactualizados, configuraciones débiles y CVEs conocidos en tu infraestructura.<br/><br/>
+            <strong>¿Cumple con ISO 27001?</strong><br/>
+            Sí, un vulnerability assessment <strong>sí cumple</strong> con el requisito de la cláusula A.8.8 (Gestión de vulnerabilidades técnicas) de ISO 27001:2022. Muchas empresas lo contratan como evidencia de control preventivo sin necesidad de un pentest completo.<br/><br/>
+            <strong>¿Cuándo elegirlo?</strong><br/>
+            Cuando es tu primera vez, tienes presupuesto limitado o necesitas cumplimiento rápido. Es el punto de partida correcto.
+          </div>
+        </td>
+        <td class="highlight">
+          Prueba de Penetración
+          <span class="tooltip-trigger" onclick="toggleTooltip(event, 'pentest')" style="cursor:pointer;font-size:0.7rem;color:var(--accent);"> ⓘ</span>
+          <div id="tooltip-pentest" class="tooltip-box">
+            <strong>¿Qué es?</strong><br/>
+            Prueba ofensiva completa con explotación manual de vulnerabilidades. Incluye análisis de lógica de negocio, escalamiento de privilegios, movimientos laterales y pruebas de ingeniería social.<br/><br/>
+            <strong>¿Diferencia con el Entry?</strong><br/>
+            El Entry encuentra QUÉ está mal. El Core demuestra QUÉ TAN MALO es — porque explota la vulnerabilidad para mostrar el impacto real.<br/><br/>
+            <strong>¿Cuándo elegirlo?</strong><br/>
+            Cuando ya tienes un assessment y quieres validar si realmente puedes ser vulnerado. O cuando tu cliente o aseguradora lo exige.
+          </div>
+        </td>
+        <td class="highlight">
+          Pentest + ISO 27001
+          <span class="tooltip-trigger" onclick="toggleTooltip(event, 'iso')" style="cursor:pointer;font-size:0.7rem;color:var(--accent);"> ⓘ</span>
+          <div id="tooltip-iso" class="tooltip-box">
+            <strong>¿Qué incluye?</strong><br/>
+            Pentest completo + implementación ISO 27001:2022 (gap analysis, Declaración de Aplicabilidad, políticas, procedimientos, matriz de riesgos, apoyo en auditoría).<br/><br/>
+            <strong>¿Por qué combinarlos?</strong><br/>
+            Porque el pentest alimenta el análisis de riesgos de la ISO, y la ISO te da el marco para corregir lo que encontró el pentest. Juntos son más fuertes.<br/><br/>
+            <strong>¿Cuándo elegirlo?</strong><br/>
+            Cuando necesitas certificación o tu cliente te exige ambos. Es el paquete completo.
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>Precio</td>
+        <td class="highlight">Desde <strong>$15,000 MXN</strong></td>
+        <td class="highlight">Desde <strong>$40,000 MXN</strong></td>
+        <td class="highlight">Desde <strong>$120,000 MXN</strong></td>
+      </tr>
+      <tr>
+        <td>Ideal para</td>
+        <td class="highlight">Primera vez, PyMEs con presupuesto ajustado</td>
+        <td class="highlight">Empresas listas para una evaluación completa</td>
+        <td class="highlight">Empresas que necesitan cumplimiento + seguridad real</td>
+      </tr>
+      <tr>
+        <td>Más info</td>
+        <td class="highlight"><a href="/qwerty_labs/es/servicios.html" style="color:var(--accent);text-decoration:none;font-family:'Share Tech Mono',monospace;font-size:0.78rem;">→ Ver detalle</a></td>
+        <td class="highlight"><a href="/qwerty_labs/es/servicios.html" style="color:var(--accent);text-decoration:none;font-family:'Share Tech Mono',monospace;font-size:0.78rem;">→ Ver detalle</a></td>
+        <td class="highlight"><a href="/qwerty_labs/es/servicios.html" style="color:var(--accent);text-decoration:none;font-family:'Share Tech Mono',monospace;font-size:0.78rem;">→ Ver detalle</a></td>
+      </tr>
+    </table>
+
     <!-- PROS Y CONTRAS -->
     <h2>Lo Bueno y lo <span class="accent2">Menos Bueno</span></h2>
 
@@ -417,6 +516,32 @@
       © 2026 QWERTY Security Labs · Ciudad Juárez, Chihuahua · <a href="/qwerty_labs/" style="color:var(--accent);text-decoration:none;">EN</a>
     </p>
   </footer>
+
+  <script>
+    function toggleTooltip(event, id) {
+      event.stopPropagation();
+      var box = document.getElementById('tooltip-' + id);
+      var overlay = document.getElementById('tooltipOverlay');
+      var isOpen = box.classList.contains('visible');
+      closeTooltip();
+      if (!isOpen) {
+        box.classList.add('visible');
+        overlay.classList.add('visible');
+        var rect = event.target.getBoundingClientRect();
+        var bx = rect.left;
+        var by = rect.bottom + 8;
+        if (bx + 360 > window.innerWidth) bx = window.innerWidth - 380;
+        if (bx < 10) bx = 10;
+        box.style.left = bx + 'px';
+        box.style.top = by + 'px';
+      }
+    }
+    function closeTooltip() {
+      document.querySelectorAll('.tooltip-box').forEach(function(el) { el.classList.remove('visible'); });
+      document.getElementById('tooltipOverlay').classList.remove('visible');
+    }
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeTooltip(); });
+  </script>
 
 </body>
 </html>
