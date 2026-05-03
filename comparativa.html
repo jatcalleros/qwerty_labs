@@ -28,7 +28,7 @@
       background: var(--bg);
       color: var(--text);
       font-family: 'Rajdhani', sans-serif;
-      font-size: 27px;
+      font-size: 32px;
       line-height: 1.7;
       overflow-x: hidden;
     }
@@ -80,7 +80,7 @@
       border-collapse: separate;
       border-spacing: 0;
       margin: 2rem 0;
-      font-size: 0.9rem;
+      font-size: 1rem;
     }
     .comparison-table th {
       background: var(--surface);
@@ -107,7 +107,7 @@
     .comparison-table tr:hover td { background: rgba(0,255,224,0.02); }
     .comparison-table td:first-child {
       font-family: 'Share Tech Mono', monospace;
-      font-size: 0.9rem;
+      font-size: 1rem;
       color: var(--accent3);
     }
     .comparison-table td.highlight {
@@ -150,7 +150,7 @@
     .pro ul, .con ul { list-style: none; }
     .pro li, .con li {
       padding: 0.35rem 0;
-      font-size: 0.9rem;
+      font-size: 1rem;
     }
     .pro li::before { content: '+ '; color: #28c840; font-family: 'Share Tech Mono', monospace; }
     .con li::before { content: '- '; color: var(--accent2); font-family: 'Share Tech Mono', monospace; }
@@ -166,7 +166,7 @@
       font-family: 'Orbitron', monospace;
       font-size: 0.95rem; color: var(--accent); margin-bottom: 0.75rem;
     }
-    .callout p { color: var(--muted); font-size: 1rem; }
+    .callout p { color: var(--muted); font-size: 1.1rem; }
 
     .verdict-box {
       text-align: center;
@@ -195,6 +195,7 @@
 
     /* ── Tooltip ── */
     .tooltip-box {
+      font-size: 0.95rem;
       display: none;
       position: fixed;
       z-index: 9999;
@@ -219,11 +220,13 @@
     .tooltip-overlay.visible { display: block; }
 
     @media (max-width: 768px) {
-      .tooltip-box { max-width: 90vw; font-size: 0.78rem; top: 10px !important; left: 5vw !important; }
+      .tooltip-box {
+      font-size: 0.95rem; max-width: 90vw; font-size: 0.78rem; top: 10px !important; left: 5vw !important; }
       .comparison-table { font-size: 0.82rem; }
       .comparison-table th, .comparison-table td { padding: 0.75rem 0.6rem; }
       .pro-con-grid { grid-template-columns: 1fr; }
-      .tooltip-box { max-width: 85vw; font-size: 0.8rem; }
+      .tooltip-box {
+      font-size: 0.95rem; max-width: 85vw; font-size: 0.8rem; }
     }
   </style>
   <div class="tooltip-overlay" id="tooltipOverlay" onclick="closeTooltip()"></div>
@@ -239,7 +242,17 @@
     <p style="color:var(--muted);font-size:1.1rem;margin-bottom:2rem;">Because not everyone who says "security" does the same thing.</p>
     <p class="subtitle" style="font-size:1.05rem;">
       A direct comparison with the alternatives. No fluff, no empty promises — just real information to decide with clarity.
-    </p>
+    </p></p>
+    <div style="background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--accent);padding:1.5rem 2rem;margin:2rem 0;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;">
+      <div style="font-family:'Orbitron',monospace;font-size:1.2rem;font-weight:900;color:var(--accent);text-shadow:var(--glow);white-space:nowrap;">PentAGI</div>
+      <p style="color:var(--text);margin:0;flex:1;font-size:1rem;">
+        Powered by <strong>PentAGI</strong> — an autonomous AI agent system that amplifies our vulnerability detection capability, covering more attack surface in less time.
+      </p>
+    </div>
+
+
+
+
 
     <!-- TIER TABLE -->
     <h2>Our <span class="accent">Services</span></h2>
